@@ -22,7 +22,7 @@ StatusConnectionWrong is just a return if connections is wrong with int 0
 var MongoDBConnection = ConnectionMongoDB()
 var userMongoDB = os.Getenv("USERNAME_MONGODB")
 var passMongoDB = os.Getenv("PASSWORD_MONGODB")
-var urlMongoDB = os.Getenv("URL_MONGODB")
+var urlMongoDB = os.Getenv("HOST_MONGODB")
 var mongoDB = fmt.Sprintf("mongodb+srv://%s:%s@%s/?retryWrites=true&w=majority", userMongoDB, passMongoDB, urlMongoDB)
 var StatusConnectionOK = 1
 var StatusConnectionWrong = 0
