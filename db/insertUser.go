@@ -2,6 +2,7 @@ package db
 
 import (
 	"context"
+	"log"
 	"time"
 
 	"github.com/nehonar/twitteringo/helper"
@@ -23,10 +24,10 @@ func InsertUser(user models.User) (string, bool, error) {
 
 	result, err := collection.InsertOne(ctx, user)
 	if err != nil {
+		log.Print("Insert in database went wrong")
 		return "", false, err
 	}
 
-	// Get id to insert in MongoDB
 	objectId, _ := result.InsertedID.(primitive.ObjectID)
 
 	return objectId.String(), true, nil

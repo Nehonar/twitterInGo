@@ -20,6 +20,7 @@ var invalidLengthUserPass = 6
 SignUpUser is a function to check if user exists and sign up if is a new user
 */
 func SignUpUser(w http.ResponseWriter, r *http.Request) {
+	log.Print("Signup new user")
 	var modelUser models.User
 
 	err := json.NewDecoder(r.Body).Decode(&modelUser)
