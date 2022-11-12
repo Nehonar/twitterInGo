@@ -18,6 +18,7 @@ func HandelersRoute() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/signup", middlew.CheckInMongoDB(routers.SignUpUser)).Methods("POST")
+	router.HandleFunc("/login", middlew.CheckInMongoDB(routers.Login)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {

@@ -7,6 +7,13 @@ import (
 )
 
 /*
+invalidLengthUserEmail invalid number of characters to pass user email
+invalidLengthUserPass invalid number of characters to pass user password
+*/
+var InvalidLengthUserEmail = 0
+var InvalidLengthUserPass = 6
+
+/*
 User user model to MongoDB
 */
 type User struct {

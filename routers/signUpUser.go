@@ -10,13 +10,6 @@ import (
 )
 
 /*
-invalidLengthUserEmail invalid number of characters to pass user email
-invalidLengthUserPass invalid number of characters to pass user password
-*/
-var invalidLengthUserEmail = 0
-var invalidLengthUserPass = 6
-
-/*
 SignUpUser is a function to check if user exists and sign up if is a new user
 */
 func SignUpUser(w http.ResponseWriter, r *http.Request) {
@@ -30,12 +23,12 @@ func SignUpUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if len(modelUser.Email) == invalidLengthUserEmail {
+	if len(modelUser.Email) == models.InvalidLengthUserEmail {
 		http.Error(w, "Required valid email", 400)
 		return
 	}
 
-	if len(modelUser.Password) < invalidLengthUserPass {
+	if len(modelUser.Password) < models.InvalidLengthUserPass {
 		http.Error(w, "Required minimum 6 characters in password", 400)
 		return
 	}
